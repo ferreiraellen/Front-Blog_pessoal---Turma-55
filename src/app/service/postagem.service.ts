@@ -15,23 +15,23 @@ export class PostagemService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  getAllPostagens():Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(' https://blpessoal.herokuapp.com/postagens', this.token)
+  getAllPostagens(): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>('https://blpessoal.herokuapp.com/Postagens', this.token)
 
   }
-  getByIdPostagem(id: number):Observable<Postagem>{
-    return this.http.get<Postagem>(`https://blpessoal.herokuapp.com/postagens/${id} `, this.token)
+  getByIdPostagem(id: number): Observable<Postagem>{
+    return this.http.get<Postagem>(`https://blpessoal.herokuapp.com/Postagens/${id} `, this.token)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://blpessoal.herokuapp.com/postagens', postagem, this.token)
+    return this.http.post<Postagem>('https://blpessoal.herokuapp.com/Postagens', postagem, this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://blpessoal.herokuapp.com/postagens', postagem, this.token)
+    return this.http.put<Postagem>('https://blpessoal.herokuapp.com/Postagens', postagem, this.token)
 
   }
   deletePostagem(id: number){
-    return this.http.delete(`https://blpessoal.herokuapp.com/postagens/${id} `)
+    return this.http.delete(`https://blpessoal.herokuapp.com/Postagens/${id} `)
   }
 }

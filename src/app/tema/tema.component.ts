@@ -26,7 +26,7 @@ export class TemaComponent implements OnInit {
     this.findAllTemas()
   }
   findAllTemas(){
-    this.temaService.getAllTema(). subscribe((resp:Tema[]) => {
+    this.temaService.getAllTema().subscribe((resp:Tema[]) => {
       this.listaTemas = resp
     })
   }

@@ -1,5 +1,6 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../model/User';
@@ -11,7 +12,9 @@ import { Userlogin } from '../model/Userlogin';
 export class AuthService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router :Router
+
   ) { }
 
   login(userlogin: Userlogin): Observable<Userlogin>{
@@ -20,6 +23,10 @@ export class AuthService {
 
   cadastro(user:User): Observable<User>{
     return this.http.post<User>(' https://blpessoal.herokuapp.com/usuarios/cadastrar', user)
+
+  }
+  atualizar(user:User): Observable<User>{
+    return this.http.put<User>(' https://blpessoal.herokuapp.com/usuarios/atualizar', user)
 
   }
 
